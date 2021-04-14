@@ -1,19 +1,27 @@
 mixed-port: 7890
-allow-lan: false
 ipv6: false
 mode: Rule
 log-level: silent
+external-controller: :9090
 dns:
   enable: true
   ipv6: false
   enhanced-mode: fake-ip
-  fake-ip-range: 127.8.0.1/16
+  fake-ip-range: 198.18.0.1/16
   nameserver:
-    - 1.1.1.1
-    - 8.8.8.8
-  fallback:
-    - 1.1.1.1
-    - 8.8.8.8
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.quad9.net/dns-query
+  - https://1.1.1.1/dns-query
+  - tls://cloudflare-dns.com:853
+  - tls://dns.google:853
+  - tls://dns.quad9.net:853
+    fallback:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.quad9.net/dns-query
+    - https://1.1.1.1/dns-query
+    - tls://cloudflare-dns.com:853
+    - tls://dns.google:853
+    - tls://dns.quad9.net:853
 proxies:
   - {name: Japan, server: 45.87.213.83, port: 35294, type: ss, cipher: aes-256-gcm, password: J9Y2ncrdPEC38gwydNFFGBna}
   - {name: Indonesia, server: 103.120.66.219, port: 31944, type: ss, cipher: aes-256-gcm, password: aYNeKDMzYQYw4KbUbJA8Wszq}
@@ -291,10 +299,10 @@ proxies:
   - {name: New-Zealand 2, server: 180.149.231.45, port: 31944, type: ss, cipher: aes-256-gcm, password: aYNeKDMzYQYw4KbUbJA8Wszq}
   - {name: New-Zealand 3, server: 180.149.231.45, port: 35294, type: ss, cipher: aes-256-gcm, password: J9Y2ncrdPEC38gwydNFFGBna}
 proxy-groups:
-  - name: 🔰 SELECT [Bn_Chanll]
+  - name: 🔰 SELECT
     type: select
     proxies:
-      - ♻️ BESTPING [Bn_Chanll]
+      - ♻️ BESTPING
       - Japan
       - Indonesia
       - JP 🇯🇵 Tokyo
@@ -570,9 +578,9 @@ proxy-groups:
       - New-Zealand
       - New-Zealand 2
       - New-Zealand 3
-  - name: ♻️ BESTPING [Bn_Chanll]
+  - name: ♻️ BESTPING
     type: url-test
-    url: https://www.google.com/
+    url: http://cp.cloudflare.com/generate_204
     interval: 300
     proxies:
       - Japan
@@ -851,4 +859,7 @@ proxy-groups:
       - New-Zealand 2
       - New-Zealand 3
 rules:
- - MATCH,♻️ BESTPING [Bn_Chanll],🔰 SELECT [Bn_Chanll]
+ - DOMAIN-SUFFIX,local,DIRECT
+ - GEOIP,IR,DIRECT,no-resolve
+ - DOMAIN-SUFFIX,ir,DIRECT,no-resolve
+ - MATCH,♻️ BESTPING,🔰 SELECT
