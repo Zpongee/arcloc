@@ -29,7 +29,7 @@ dns:
   - tls://dns.aa.net.uk:853
   - tls://dns.quad9.net:853
   - tls://dot.libredns.gr:853
-    fallback:
+  fallback:
   - https://dns.aa.net.uk/dns-query
   - https://doh-2.seby.io:443/dns-query
   - https://doh.opendns.com/dns-query
