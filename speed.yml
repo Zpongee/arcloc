@@ -9,47 +9,19 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver:
-  - https://dns.aa.net.uk/dns-query
-  - https://doh-2.seby.io:443/dns-query
-  - https://doh.opendns.com/dns-query
-  - https://doh.libredns.gr/dns-query
-  - https://dnsforge.de/dns-query
   - https://cloudflare-dns.com/dns-query
   - https://dns.quad9.net/dns-query
-  - https://dns-unfiltered.adguard.com/dns-query
-  - https://doh-jp.blahdns.com/dns-query
-  - https://public.dns.iij.jp/dns-query
-  - https://dns.adguard.com/dns-query
   - https://1.1.1.1/dns-query
-  - https://doh.ffmuc.net/dns-query
-  - https://dns.flatuslifir.is/dns-query
-  - https://eu1.dns.lavate.ch/dns-query
   - tls://cloudflare-dns.com:853
   - tls://dns.google:853
-  - tls://dns.aa.net.uk:853
   - tls://dns.quad9.net:853
-  - tls://dot.libredns.gr:853
   fallback:
-  - https://dns.aa.net.uk/dns-query
-  - https://doh-2.seby.io:443/dns-query
-  - https://doh.opendns.com/dns-query
-  - https://doh.libredns.gr/dns-query
-  - https://dnsforge.de/dns-query
   - https://cloudflare-dns.com/dns-query
   - https://dns.quad9.net/dns-query
-  - https://dns-unfiltered.adguard.com/dns-query
-  - https://doh-jp.blahdns.com/dns-query
-  - https://public.dns.iij.jp/dns-query
-  - https://dns.adguard.com/dns-query
   - https://1.1.1.1/dns-query
-  - https://doh.ffmuc.net/dns-query
-  - https://dns.flatuslifir.is/dns-query
-  - https://eu1.dns.lavate.ch/dns-query
   - tls://cloudflare-dns.com:853
   - tls://dns.google:853
-  - tls://dns.aa.net.uk:853
   - tls://dns.quad9.net:853
-  - tls://dot.libredns.gr:853
 proxies:
   - {name: 🇬🇧UnitedKingdom1-@proSSH, server: 82.102.8.73, port: 443, type: ssr, cipher: aes-128-ctr, password: yvXQt%2qf0tb*l1W, protocol: auth_aes128_md5, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: ""}
   - {name: 🇬🇧uk1-@proSSH, server: 212.84.160.177, port: 443, type: ssr, cipher: aes-256-cfb, password: sEscPBiAD9K$&@79, protocol: auth_chain_a, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: ""}
