@@ -41,7 +41,7 @@ proxies:
   - {name: 🇩🇪Germany5-@proSSH, server: 138.201.99.18, port: 443, type: ssr, cipher: aes-256-cfb, password: SpEEdVPN!@#, protocol: auth_chain_a, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: ""}
   - {name: 🇩🇪Germany6-@proSSH, server: 148.251.214.132, port: 443, type: ssr, cipher: aes-256-cfb, password: SpEEdVPN!@#, protocol: auth_chain_a, obfs: tls1.2_ticket_auth, protocol-param: "", obfs-param: ""}
 proxy-groups:
-  - name: 🔰 Entekhab
+  - name: 🔰 Select
     type: select
     proxies:
       - ♻️ Best Ping
@@ -878,4 +878,4 @@ rules:
   - DOMAIN-SUFFIX,www.windowssearch.com,🛑 Block
   - DOMAIN-SUFFIX,x.urs.microsoft.com,🛑 Block
   - DOMAIN-SUFFIX,xml.login.live.com,🛑 Block
-  - MATCH,🔰 Entekhab,♻️ Best Ping
+  - MATCH,🔰 Select,♻️ Best Ping,dns-failed
